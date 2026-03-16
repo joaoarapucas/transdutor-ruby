@@ -1,5 +1,4 @@
 flowchart TD
-
     %%ESTADOS
     q0((q0))
     %%milhares
