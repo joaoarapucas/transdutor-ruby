@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
 
     %% ESTADOS
@@ -144,3 +145,4 @@ flowchart TD
     qV -->|"I / 1"|qVI
 
     qVI -->|"I / 1"|qII
+```
