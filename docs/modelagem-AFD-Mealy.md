@@ -1,148 +1,206 @@
 ```mermaid
 flowchart TD
-
-    %% ESTADOS
+    %%ESTADOS
     q0((q0))
+    qFIM(((qFIM)))
+    %%milhares
+    qM((qM))
+    qMM((qMM))
+    qMMM((qMMM))
+    %%centenas
+    qC((qC))
+    qCC((qCC))
+    qCCC((qCCC))
+    qCD((qCD))
+    qCM((qCM))
+    qD((qD))
+    qDC((qDC))
+    qDCC((qDCC))
+    qDCCC((qDCCC))
+    %%dezenas
+    qX((qX))
+    qXX((qXX))
+    qXXX((qXXX))
+    qXL((qXL))
+    qXC((qXC))
+    qL((qL))
+    qLX((qLX))
+    qLXX((qLXX))
+    qLXXX((qLXXX))
+    %%unidades
+    qI((qI))
+    qII((qII))
+    qIII((qIII))
+    qIV((qIV))
+    qIX((qIX))
+    qV((qV))
+    qVI((qVI))
+    qVII((qVII))
+    qVIII((qVIII))
+    
+    %%TRANSIÇÕES
+    
+    q0 --> |M / ε|qM
+    q0 --> |C / ε|qC
+    q0 --> |D / ε|qD
+    q0 --> |X / ε|qX
+    q0 --> |L / ε|qL
+    q0 --> |I / ε|qI
+    q0 --> |V / ε|qV
+
     %% milhares
-    qM(((qM)))
-    qMM(((qMM)))
-    qMMM(((qMMM)))
-    %% centenas
-    qC(((qC)))
-    qCC(((qCC)))
-    qCCC(((qCCC)))
-    qCD(((qCD)))
-    qCM(((qCM)))
-    qD(((qD)))
-    qDC(((qDC)))
-    %% dezenas
-    qX(((qX)))
-    qXX(((qXX)))
-    qXXX(((qXXX)))
-    qXL(((qXL)))
-    qXC(((qXC)))
-    qL(((qL)))
-    qLX(((qLX)))
-    %% unidades
-    qI(((qI)))
-    qII(((qII)))
-    qIII(((qIII)))
-    qIV(((qIV)))
-    qIX(((qIX)))
-    qV(((qV)))
-    qVI(((qVI))) 
+    qM --> |M / ε|qMM
+    qM --> |C / 1|qC
+    qM --> |D / 1|qD
+    qM --> |X / 10|qX
+    qM --> |L / 10|qL
+    qM --> |I / 100|qI
+    qM --> |V / 100|qV
 
-    %% TRANSIÇÕES
-    q0 --> |"M / 1000"|qM
-    q0 --> |"C / 100"|qC
-    q0 --> |"D / 500"|qD
-    q0 --> |"X / 10"|qX
-    q0 --> |"L / 50"|qL
-    q0 --> |"I / 1"|qI
-    q0 --> |"V / 5"|qV
+    qMM --> |M / ε|qMMM
+    qMM --> |C / 2|qC
+    qMM --> |D / 2|qD
+    qMM --> |X / 20|qX
+    qMM --> |L / 20|qL
+    qMM --> |I / 200|qI
+    qMM --> |V / 200|qV
 
-    %% milhares
-    qM --> |"M / 1000"|qMM
-    qM --> |"C / 100"|qC
-    qM --> |"D / 500"|qD
-    qM --> |"X / 10"|qX
-    qM --> |"L / 50"|qL
-    qM --> |"I / 1"|qI
-    qM --> |"V / 5"|qV
-
-    qMM --> |"M / 1000"|qMMM
-    qMM --> |"C / 100"|qC
-    qMM --> |"D / 500"|qD
-    qMM --> |"X / 10"|qX
-    qMM --> |"L / 50"|qL
-    qMM --> |"I / 1"|qI
-    qMM --> |"V / 5"|qV
-
-    qMMM --> |"C / 100"|qC
-    qMMM --> |"D / 500"|qD
-    qMMM --> |"X / 10"|qX
-    qMMM --> |"L / 50"|qL
-    qMMM --> |"I / 1"|qI
-    qMMM --> |"V / 5"|qV
+    qMMM --> |C / 3|qC
+    qMMM --> |D / 3|qD
+    qMMM --> |X / 30|qX
+    qMMM --> |L / 30|qL
+    qMMM --> |I / 300|qI
+    qMMM --> |V / 300|qV
 
     %% centenas
-    qC --> |"C / 100"|qCC
-    qC --> |"D / 300"|qCD
-    qC --> |"M / 800"|qCM
-    qC --> |"X / 10"|qX
-    qC --> |"L / 50"|qL
-    qC --> |"I / 1"|qI
-    qC --> |"V / 5"|qV
+    qC --> |C / ε|qCC
+    qC --> |D / ε|qCD
+    qC --> |M / ε|qCM
+    qC --> |X / 1|qX
+    qC --> |L / 1|qL
+    qC --> |I / 10|qI
+    qC --> |V / 10|qV
 
-    qCC --> |"C / 100"|qCCC
-    qCC --> |"X / 10"|qX
-    qCC --> |"L / 50"|qL
-    qCC --> |"I / 1"|qI
-    qCC --> |"V / 5"|qV
+    qCC --> |C / ε|qCCC
+    qCC --> |X / 2|qX
+    qCC --> |L / 2|qL
+    qCC --> |I / 20|qI
+    qCC --> |V / 20|qV
 
-    qCCC --> |"X / 100"|qX
-    qCCC --> |"L / 50"|qL
-    qCCC --> |"I / 1"|qI
-    qCCC --> |"V / 5"|qV
+    qCCC --> |X / 3|qX
+    qCCC --> |L / 3|qL
+    qCCC --> |I / 30|qI
+    qCCC --> |V / 30|qV
 
-    qCD --> |"X / 10"|qX
-    qCD --> |"L / 50"|qL
-    qCD --> |"I / 1"|qI
-    qCD --> |"V / 5"|qV
+    qCD --> |X / 4|qX
+    qCD --> |L / 4|qL
+    qCD --> |I / 40|qI
+    qCD --> |V / 40|qV
 
-    qCM --> |"X / 10"|qX
-    qCM --> |"L / 50"|qL
-    qCM --> |"I / 1"|qI
-    qCM --> |"V / 5"|qV
+    qCM --> |X / 9|qX
+    qCM --> |L / 9|qL
+    qCM --> |I / 90|qI
+    qCM --> |V / 90|qV
 
-    qD --> |"C / 100"|qDC
-    qD --> |"X / 10"|qX
-    qD --> |"L / 50"|qL
-    qD --> |"I / 1"|qI
-    qD --> |"V / 5"|qV
+    qD --> |C / ε|qDC
+    qD --> |X / 5|qX
+    qD --> |L / 5|qL
+    qD --> |I / 50|qI
+    qD --> |V / 50|qV
 
-    qDC --> |"C / 100"|qCC
-    qDC --> |"X / 10"|qX
-    qDC --> |"L / 50"|qL
-    qDC --> |"I / 1"|qI
-    qDC --> |"V / 5"|qV
+    qDC --> |C / ε|qDCC 
+    qDC --> |X / 6|qX
+    qDC --> |L / 6|qL
+    qDC --> |I / 60|qI
+    qDC --> |V / 60|qV
 
-    %% dezenas
-    qX --> |"X / 10"|qXX
-    qX --> |"L / 30"|qXL
-    qX --> |"C / 80"|qXC
-    qX --> |"I / 1"|qI
-    qX --> |"V / 5"|qV
+    qDCC --> |C / ε|qDCCC
+    qDCC --> |X / 7|qX
+    qDCC --> |L / 7|qL
+    qDCC --> |I / 70|qI
+    qDCC --> |V / 70|qV
 
-    qXX --> |"X / 10"|qXXX
-    qXX --> |"I / 1"|qI
-    qXX --> |"V / 5"|qV
+    qDCCC --> |X / 8|qX
+    qDCCC --> |L / 8|qL
+    qDCCC --> |I / 80|qI
+    qDCCC --> |V / 80|qV
 
-    qXXX --> |"I / 1"|qI
-    qXXX --> |"V / 5"|qV
+    qX --> |X / ε|qXX
+    qX --> |L / ε|qXL
+    qX --> |C / ε|qXC
+    qX --> |I / 1|qI
+    qX --> |V / 1|qV
 
-    qXL --> |"I / 1"|qI
-    qXL --> |"V / 5"|qV
+    qXX --> |X / ε|qXXX
+    qXX --> |I / 2|qI
+    qXX --> |V / 2|qV
 
-    qXC --> |"I / 1"|qI
-    qXC --> |"V / 5"|qV
+    qXXX --> |I / 3|qI
+    qXXX --> |V / 3|qV
 
-    qL --> |"X / 10"|qLX
-    qL --> |"I / 1"|qI
-    qL --> |"V / 5"|qV
+    qXL --> |I / 4|qI
+    qXL --> |V / 4|qV
 
-    qLX --> |"X / 10"|qXX
-    qLX --> |"I / 1"|qI
-    qLX --> |"V / 5"|qV
+    qXC --> |I / 9|qI
+    qXC --> |V / 9|qV
 
-    %% unidades
-    qI -->|"I / 1"|qII
-    qI -->|"V / 3"|qIV
-    qI -->|"X / 8"|qIX
+    qL --> |X / ε|qLX
+    qL --> |I / 5|qI
+    qL --> |V / 5|qV
 
-    qII -->|"I / 1"|qIII
+    qLX --> |X / ε|qLXX
+    qLX --> |I / 6|qI
+    qLX --> |V / 6|qV
 
-    qV -->|"I / 1"|qVI
+    qLXX --> |X / ε|qLXXX
+    qLXX--> |I / 7|qI
+    qLXX --> |V / 7|qV
 
-    qVI -->|"I / 1"|qII
+    qLXXX--> |I / 8|qI
+    qLXXX --> |V / 8|qV
+
+    %% unidade
+    qI -->|I / ε|qII
+    qI -->|V / ε|qIV
+    qI -->|X / ε|qIX
+
+    qII -->|I / ε|qIII
+
+    qV -->|I / ε|qVI
+
+    qVI -->|I / ε|qVI
+
+    qVII --> |I / ε|qVIII
+
+    %% ACEITAÇÃO
+    qM --> |EOF / 1000|qFIM
+    qMM --> |EOF / 2000|qFIM
+    qMMM --> |EOF / 3000|qFIM
+    qC --> |EOF / 100|qFIM
+    qCC --> |EOF / 200|qFIM
+    qCCC --> |EOF / 300|qFIM
+    qCD --> |EOF / 400|qFIM
+    qCM --> |EOF / 900|qFIM
+    qD --> |EOF / 500|qFIM
+    qDC --> |EOF / 600|qFIM
+    qDCC --> |EOF / 700|qFIM
+    qDCCC --> |EOF / 800|qFIM
+    qX --> |EOF / 10|qFIM
+    qXX --> |EOF / 20|qFIM
+    qXXX --> |EOF / 30|qFIM
+    qXL --> |EOF / 40|qFIM
+    qXC --> |EOF / 90|qFIM
+    qL --> |EOF / 50|qFIM
+    qLX --> |EOF / 60|qFIM
+    qLXX --> |EOF / 70|qFIM
+    qLXXX --> |EOF / 80|qFIM
+    qI --> |EOF / 1|qFIM
+    qII --> |EOF / 2|qFIM
+    qIII --> |EOF / 3|qFIM
+    qIV --> |EOF / 4|qFIM
+    qIX --> |EOF / 9|qFIM
+    qV --> |EOF / 5|qFIM
+    qVI --> |EOF / 6|qFIM
+    qVII --> |EOF / 7|qFIM
+    qVIII --> |EOF / 8|qFIM 
 ```
