@@ -46,7 +46,7 @@ A saída é emitida quando o transdutor confirma o valor de um símbolo acumulad
 
 Como os números romanos funcionam como um "caminho sem volta", os símbolos são emitidos sempre que trocamos de casa nos valores. Ou seja, quando o autômato passa de um estado que pertence a casa dos milhares, e vai para um das centenas ou dezenas, ele confirma que já terminou e imprime o valor.
 
-* **Exemplo:**  No estado $q_XX$, ao ler o símbolo `I`, o transdutor transita para $q_I$ e emite 2. Ao finalizar a *string*, o transdutor transiciona de $q_I$ para $q_FIM$, emitindo 1 e devolvendo o valor final completo 21.
+* **Exemplo:**  No estado $q_{XX}$, ao ler o símbolo `I`, o transdutor transita para $q_I$ e emite 2. Ao finalizar a *string*, o transdutor transiciona de $q_I$ para $q_{FIM}$, emitindo 1 e devolvendo o valor final completo 21.
 
 ### 3. Valores rejeitados
 O sistema rejeita as cadeias se não houver uma transição do estado atual para o próximo caractere.
